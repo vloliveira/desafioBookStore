@@ -21,3 +21,6 @@ Feature: Criar usuário
       * def usuarioId = response.userID
       * def nomeUsuario = usuario.userName
       * def senha = usuario.password
+
+  Scenario:
+

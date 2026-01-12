@@ -49,13 +49,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-01-11 04:33:50 PM</div>
+    <div>2026-01-11 11:35:41 PM</div>
   </div>
 </div>
 
         <div class="nav-container">
           <div class="nav-item passed">
-            <a href="#[1:6]"><span>[1:6]</span> <span></span></a>
+            <a href="#[1:5]"><span>[1:5]</span> <span></span></a>
           </div>
         </div>
       </div>
@@ -69,29 +69,29 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
           <span class="feature-description"></span>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[1:6]">
+          <div class="scenario-heading" id="[1:5]">
             <div class="heading-container">
               <div class="scenario-tags">
                 
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[1:6]</span>
+                Scenario: <span>[1:5]</span>
                 <span class="scenario-name"></span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1005</span>
+              <span>ms:</span>&nbsp;<span>1068</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[1:6]bg">
+            <div class="step-container" id="[1:5]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[1:6]bg"><div>
+          <div data-parent="[1:5]bg"><div>
   
 
   
@@ -113,7 +113,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.3">16:33:49.233 karate.env system property was: dev 
+  <div class="preformatted" data-parent="0.3">23:35:34.142 karate.env system property was: dev 
 </div>   
 
   
@@ -126,8 +126,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.8">
-      <div class="step-ref passed">8</div>
+    <div class="step-container" id="0.7">
+      <div class="step-ref passed">7</div>
       
       <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>path &#39;/BookStore/v1/Books&#39;</span>
@@ -154,14 +154,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.9">
-      <div class="step-ref passed">9</div>
+    <div class="step-container" id="0.8">
+      <div class="step-ref passed">8</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">1001</div>
+    <div class="time-cell passed">1065</div>
   </div>
 
    
@@ -170,7 +170,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.9">16:33:49.453 request:
+  <div class="preformatted" data-parent="0.8">23:35:34.441 request:
 1 &gt; GET https://bookstore.demoqa.com/BookStore/v1/Books
 1 &gt; Host: bookstore.demoqa.com
 1 &gt; Connection: Keep-Alive
@@ -178,10 +178,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-16:33:50.241 response time in milliseconds: 784
+23:35:35.237 response time in milliseconds: 795
 1 &lt; 200
 1 &lt; Server: nginx/1.17.10 (Ubuntu)
-1 &lt; Date: Sun, 11 Jan 2026 19:33:51 GMT
+1 &lt; Date: Mon, 12 Jan 2026 02:35:35 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 4514
 1 &lt; Connection: keep-alive
@@ -201,14 +201,42 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.10">
-      <div class="step-ref passed">10</div>
+    <div class="step-container" id="0.9">
+      <div class="step-ref passed">9</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref passed">11</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def livros = response.books</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
   </div>
 
    

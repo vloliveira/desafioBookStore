@@ -10,7 +10,7 @@ class ExamplesTest {
     @Test
     void testParallel() {
         Results results = Runner.path("classpath:features")
-                .tags("@smoke")
+                //.tags("@smoke")
                 //.outputCucumberJson(true)
                 .parallel(5);
         assertEquals(0, results.getFailCount(), results.getErrorMessages());

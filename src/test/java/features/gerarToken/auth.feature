@@ -5,7 +5,7 @@ Feature: Gerar token
   @token
   Scenario:
     Given url baseUrl
-    And path 'Account/v1/GenerateToken'
+    And path '/Account/v1/GenerateToken'
     And request
     """
     {
@@ -14,7 +14,8 @@ Feature: Gerar token
     }
     """
     When method post
-    Then response.authorization != null
+    Then match response.token != null
+    And  status 200
 
     * def token = response.token
     * print token
