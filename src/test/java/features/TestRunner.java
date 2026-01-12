@@ -6,7 +6,7 @@ class TestRunner {
 
     @Karate.Test
     Karate testeCriarUsuario() {
-        return Karate.run("classpath:features/users/criarUsuario/criar-usuario-sucesso.feature"
+        return Karate.run("classpath:features/users/criarUsuario/criar-usuario.feature"
         ).relativeTo(TestRunner.class);
     }
 

@@ -1,7 +1,7 @@
 Feature: Gerar token
 
   Background:
-    * call read('classpath:features/users/criarUsuario/criar-usuario-sucesso.feature@sucesso')
+    * call read('classpath:features/users/criarUsuario/criar-usuario.feature@sucesso')
 
   @sucesso
   @token
@@ -36,3 +36,4 @@ Feature: Gerar token
     When method post
     Then match response.token == null
     And  status 200
+    # A API da BookStore informa que o status code para este cenário é 200

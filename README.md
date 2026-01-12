@@ -65,13 +65,6 @@ cd bookstore-karate-tests
 
 ```
 
-### 2. Instale as dependências:
-
-```bash
-mvn clean install -DskipTests
-
-```
-
 ---
 
 ## 📁 Estrutura do Projeto
@@ -139,44 +132,12 @@ mvn clean test
 
 ---
 
-### **Executar feature ESPECÍFICA:**
-
-### Testes de Account:
+### **Executar testes específicos:**
 
 ```bash
-mvn test -Dkarate.options="classpath:features/account/criar-usuario-sucesso.feature"
-
-```
-
-### Testes de BookStore:
-
-```bash
-mvn test -Dkarate.options="classpath:features/bookstore/listar-livros-sucesso.feature"
-
-```
-
----
-
-### **Executar com AMBIENTE específico:**
-
-```bash
-# Ambiente de desenvolvimento
-mvn test -Dkarate.env=dev
-
-# Ambiente de QA
-mvn test -Dkarate.env=qa
-
-# Ambiente de produção
-mvn test -Dkarate.env=prod
-
-```
-
----
-
-### **Executar em PARALELO:**
-
-```bash
-mvn test -Dkarate.options="--threads 5"
+<div align="center">
+  <video src="LINK_DO_SEU_VIDEO_AQUI" width="400" />
+</div>
 
 ```
 
@@ -186,26 +147,27 @@ mvn test -Dkarate.options="--threads 5"
 
 ### **Account (Usuários):**
 
-| Endpoint                    | Método | Cenário                               | Status | Tag       |
-| --------------------------- | ------ | ------------------------------------- | ------ | --------- |
-| `/Account/v1/User`          | POST   | Criar usuário válido                  | 201    | @positivo |
-| `/Account/v1/User`          | POST   | Criar usuário duplicado               | 406    | @negativo |
-| `/Account/v1/GenerateToken` | POST   | Gerar token válido                    | 200    | @positivo |
-| `/Account/v1/GenerateToken` | POST   | Gerar token com credenciais inválidas | 400    | @negativo |
-| `/Account/v1/User/{UUID}`   | DELETE | Deletar usuário existente             | 204    | @positivo |
-| `/Account/v1/User/{UUID}`   | DELETE | Deletar usuário inexistente           | 200    | @negativo |
+| Endpoint                                                               | Método    | Cenário                               | Status | Tag       |
+| ---------------------------------------------------------------------- | --------- | ------------------------------------- | ------ | --------- |
+| `/Account/v1/User`                                                     | POST      | Criar usuário válido                  | 201    | @positivo |
+| `/Account/v1/User`                                                     | POST      | Criar usuário já cadastrado           | 400    | @negativo |
+| `/Account/v1/GenerateToken`                                            | POST      | Gerar token válido                    | 200    | @positivo |
+| `/Account/v1/GenerateToken`                                            | POST      | Gerar token com credenciais inválidas | 200    |
+| `A API da BookStore informa que o status code para este cenário é 200` | @negativo |
+| `/Account/v1/User/{UUID}`                                              | DELETE    | Deletar usuário existente             | 204    | @positivo |
+| `/Account/v1/User/{UUID}`                                              | DELETE    | Deletar usuário sem token             | 401    | @negativo |
 
 ### **BookStore (Livros):**
 
-| Endpoint                         | Método | Cenário                          | Status | Tag       |
-| -------------------------------- | ------ | -------------------------------- | ------ | --------- |
-| `/BookStore/v1/Books`            | GET    | Listar todos os livros           | 200    | @positivo |
-| `/BookStore/v1/Books`            | POST   | Adicionar livro válido           | 201    | @positivo |
-| `/BookStore/v1/Books`            | POST   | Adicionar livro sem autenticação | 401    | @negativo |
-| `/BookStore/v1/Book?ISBN={isbn}` | GET    | Buscar livro existente           | 200    | @positivo |
-| `/BookStore/v1/Book?ISBN={isbn}` | GET    | Buscar livro inexistente         | 400    | @negativo |
-| `/BookStore/v1/Books/{ISBN}`     | PUT    | Atualizar ISBN válido            | 200    | @positivo |
-| `/BookStore/v1/Books/{ISBN}`     | PUT    | Atualizar ISBN inválido          | 400    | @negativo |
+| Endpoint                         | Método | Cenário                           | Status | Tag       |
+| -------------------------------- | ------ | --------------------------------- | ------ | --------- |
+| `/BookStore/v1/Books`            | GET    | Listar todos os livros            | 200    | @positivo |
+| `/BookStore/v1/Books`            | POST   | Adicionar livro válido            | 201    | @positivo |
+| `/BookStore/v1/Books`            | POST   | Adicionar livro sem autenticação  | 400    | @negativo |
+| `/BookStore/v1/Book?ISBN={isbn}` | GET    | Buscar livro por isbn             | 200    | @positivo |
+| `/BookStore/v1/Book?ISBN={isbn}` | GET    | Buscar livro com isbn inexistente | 400    | @negativo |
+| `/BookStore/v1/Books/{ISBN}`     | PUT    | Atualizar ISBN válido             | 200    | @positivo |
+| `/BookStore/v1/Books/{ISBN}`     | PUT    | Atualizar ISBN inválido           | 400    | @negativo |
 
 ---
 
@@ -214,25 +176,7 @@ mvn test -Dkarate.options="--threads 5"
 Após executar os testes, os relatórios são gerados automaticamente em:
 
 ```
-target/karate-reports/
-├── karate-summary.html      # Relatório resumido
-└── karate-timeline.html     # Timeline de execução
-
-```
-
-### **Abrir Relatório:**
-
-### No Windows:
-
-```bash
-start target/karate-reports/karate-summary.html
-
-```
-
-### No Mac/Linux:
-
-```bash
-open target/karate-reports/karate-summary.html
+target/karate-reports
 ```
 
 ---
@@ -241,41 +185,19 @@ open target/karate-reports/karate-summary.html
 
 ### **Configuração no `karate-config.js`:**
 
+Este é o `karate-config.js`, o arquivo de configuração global do projeto. É aqui que definimos a variável que será utilizada como URL base em todas as features, a `baseUrl`:
+
 ```jsx
-MODIFICAR MODIFICAR MODIFICAR
-
 function fn() {
-    var env = karate.env || 'dev';  // Padrão: dev
+  var env = karate.env;
 
-    var config = {
-        env: env,
-        baseUrl: "<https://bookstore.demoqa.com>",
+  var config = { env: env };
+  config.baseUrl = "https://bookstore.demoqa.com";
+  karate.log("karate.env system property was:", env);
 
-        testUser: {
-            userName: 'testuser_' + new Date().getTime(),  // Username único
-            password: 'Test@1234'
-        }
-    };
-
-    return config;
+  return config;
 }
-
 ```
-
-### **Ambientes Disponíveis:**
-
-| Ambiente | Comando                      | Descrição                |
-| -------- | ---------------------------- | ------------------------ |
-| `dev`    | `mvn test -Dkarate.env=dev`  | Desenvolvimento (padrão) |
-| `qa`     | `mvn test -Dkarate.env=qa`   | Homologação/QA           |
-| `prod`   | `mvn test -Dkarate.env=prod` | Produção                 |
-
-### **Propriedades Configuráveis:**
-
-- `baseUrl`: URL da API
-- `testUser.userName`: Template de username para testes
-- `testUser.password`: Senha padrão para testes
-- `timeout`: Timeout de requisições (padrão: 10000ms)
 
 ---
 
@@ -285,19 +207,18 @@ function fn() {
 
 - Features separadas por responsabilidade (1 feature = 1 propósito)
 - Nomenclatura clara e descritiva
-- Estrutura escalável
 
 ### ✅ **Reutilização:**
 
 - `auth.feature` para setup de autenticação (criar usuário + gerar token)
-- `callonce` para executar setup apenas 1 vez
+- `callonce` para reutilização de features
 - Variáveis compartilhadas entre features
 
 ### ✅ **Independência:**
 
 - Testes isolados e independentes
 - Cada teste pode rodar sozinho
-- Dados únicos (timestamp) para evitar conflitos
+- Dados únicos (Java Faker) para evitar conflitos
 
 ### ✅ **Validações:**
 
@@ -308,90 +229,10 @@ function fn() {
 
 ### ✅ **Tags:**
 
-- `@smoke` - Testes essenciais
 - `@positivo` - Cenários de sucesso
 - `@negativo` - Cenários de falha
-- `@account` / `@bookstore` - Por módulo
 
-### ✅ **Documentação:**
-
-- README completo
-- Comentários nos testes
-- Logs detalhados para debug
-
----
-
-## 📌 Casos de Uso
-
-### **Cenário 1: Smoke Test Rápido**
-
-```bash
-mvn test -Dkarate.options="--tags @smoke"
-
-```
-
-### **Cenário 2: Validar Apenas Sucessos**
-
-```bash
-mvn test -Dkarate.options="--tags @positivo"
-
-```
-
-### **Cenário 3: Validar Apenas Falhas**
-
-```bash
-mvn test -Dkarate.options="--tags @negativo"
-
-```
-
-### **Cenário 4: Teste Completo com Relatório**
-
-```bash
-mvn clean test
-start target/karate-reports/karate-summary.html
-
-```
-
----
-
-## 🐛 Troubleshooting
-
-### **Problema: "Failed to execute goal"**
-
-**Solução:**
-
-```bash
-mvn clean install -DskipTests
-mvn test
-
-```
-
-### **Problema: "Connection timeout"**
-
-**Solução:** Aumente o timeout no `karate-config.js`:
-
-```jsx
-karate.configure("connectTimeout", 30000);
-karate.configure("readTimeout", 30000);
-```
-
-### **Problema: "User exists"**
-
-**Solução:** O username deve ser único. Verifique se está usando timestamp:
-
-```gherkin
-"userName": "Usuario_" + new Date().getTime()
-
-```
-
-### **Problema: Relatório não abre**
-
-**Solução:** Execute os testes primeiro:
-
-```bash
-mvn clean test
-
-```
+###
 
 ---
 
@@ -415,18 +256,3 @@ mvn clean test
 ## 📝 Licença
 
 Este projeto foi desenvolvido para fins educacionais como parte de um desafio técnico.
-
----
-
-## 🎯 Diferenciais Implementados
-
-- ✅ Cobertura dos 2 métodos GET (Books e Book)
-- ✅ Uso de `Scenario Outline` para múltiplos casos de teste
-- ✅ Validação de schema básico
-- ✅ Uso de `callonce` para otimização
-- ✅ Testes de sucesso E falha para cada endpoint
-- ✅ Estrutura profissional e escalável
-
----
-
-**Desenvolvido com Karate Framework**

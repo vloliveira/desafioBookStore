@@ -4,7 +4,7 @@ Feature: Criar usuário
     Given url baseUrl
 
   @sucesso
-  Scenario:
+  Scenario: Criar usuário válido
       * def nome = Java.type('features.support.Utils').gerarNome()
       * print nome
       * def usuario =

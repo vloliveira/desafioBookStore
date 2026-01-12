@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-1","id":1},{"content":"pool-1-thread-2","id":2},{"content":"pool-1-thread-3","id":3},{"content":"pool-1-thread-4","id":4},{"content":"pool-1-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"features\/books\/adicionarLivro\/adicionar-livro[1:9]","start":1768239209822,"end":1768239210047,"title":"features\/books\/adicionarLivro\/adicionar-livro[1:9] 14:33:29.822-14:33:30.047 Adicionar livro com dados válidos","className":"failed"},{"id":2,"group":2,"content":"features\/books\/adicionarLivro\/adicionar-livro[2:33]","start":1768239209822,"end":1768239210047,"title":"features\/books\/adicionarLivro\/adicionar-livro[2:33] 14:33:29.822-14:33:30.047 Adicionar livro com isbn inválido","className":"failed"},{"id":3,"group":3,"content":"features\/books\/alterarLivro\/alterar-livro[1:8]","start":1768239209822,"end":1768239210053,"title":"features\/books\/alterarLivro\/alterar-livro[1:8] 14:33:29.822-14:33:30.053 Atualizar ISBN","className":"failed"},{"id":4,"group":4,"content":"features\/books\/alterarLivro\/alterar-livro[2:29]","start":1768239209822,"end":1768239210052,"title":"features\/books\/alterarLivro\/alterar-livro[2:29] 14:33:29.822-14:33:30.052 Atualizar ISBN incorreto","className":"failed"},{"id":5,"group":5,"content":"features\/books\/buscarLivros\/buscar-isbn[1:9]","start":1768239209822,"end":1768239211678,"title":"features\/books\/buscarLivros\/buscar-isbn[1:9] 14:33:29.822-14:33:31.678 Buscar livro por isbn"},{"id":6,"group":2,"content":"features\/books\/buscarLivros\/buscar-isbn[2:17]","start":1768239210054,"end":1768239212674,"title":"features\/books\/buscarLivros\/buscar-isbn[2:17] 14:33:30.054-14:33:32.674 Buscar livro com isbn inexistente"},{"id":7,"group":1,"content":"features\/books\/buscarLivros\/buscar-livros[1:5]","start":1768239210054,"end":1768239213870,"title":"features\/books\/buscarLivros\/buscar-livros[1:5] 14:33:30.054-14:33:33.870 Buscar livros"},{"id":8,"group":4,"content":"features\/gerarToken\/auth[1:8]","start":1768239210059,"end":1768239210062,"title":"features\/gerarToken\/auth[1:8] 14:33:30.059-14:33:30.062 Gerar token válido","className":"failed"},{"id":9,"group":3,"content":"features\/gerarToken\/auth[2:26]","start":1768239210059,"end":1768239210062,"title":"features\/gerarToken\/auth[2:26] 14:33:30.059-14:33:30.062 Gerar token com senha incorreta","className":"failed"},{"id":10,"group":3,"content":"features\/users\/criarUsuario\/criar-usuario[1:7]","start":1768239210066,"end":1768239212608,"title":"features\/users\/criarUsuario\/criar-usuario[1:7] 14:33:30.066-14:33:32.608"},{"id":11,"group":4,"content":"features\/users\/criarUsuario\/criar-usuario[2:27]","start":1768239210066,"end":1768239211871,"title":"features\/users\/criarUsuario\/criar-usuario[2:27] 14:33:30.066-14:33:31.871 Criar usuario já cadastrado"},{"id":12,"group":5,"content":"features\/users\/deletarUsuario\/deletar-usuario[1:6]","start":1768239211682,"end":1768239211689,"title":"features\/users\/deletarUsuario\/deletar-usuario[1:6] 14:33:31.682-14:33:31.689 Deletar usuário com token","className":"failed"},{"id":13,"group":5,"content":"features\/users\/deletarUsuario\/deletar-usuario[2:13]","start":1768239211692,"end":1768239211698,"title":"features\/users\/deletarUsuario\/deletar-usuario[2:13] 14:33:31.692-14:33:31.698 Deletar usuário sem token","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
