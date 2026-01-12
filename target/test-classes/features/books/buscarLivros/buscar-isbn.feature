@@ -1,13 +1,22 @@
-Feature: Buscar livro pelo ISBN
+Feature: Buscar livro com ISBN
 
   Background:
     Given url baseUrl
 
     * call read('classpath:features/books/buscarLivros/buscar-livros.feature')
 
-    Scenario: Buscar livro
+    @sucesso
+    Scenario: Buscar livro por isbn
       And path '/BookStore/v1/Book'
       And param ISBN = livros[0].isbn
       When method get
       Then status 200
       And match response.isbn == livros[0].isbn
+
+      @negative
+    Scenario: Buscar livro com isbn inexistente
+      And path '/BookStore/v1/Book'
+      And param ISBN = "1234567890123"
+      When method get
+      Then status 400
+      And match response.message == "ISBN supplied is not available in Books Collection!"

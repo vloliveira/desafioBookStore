@@ -1,7 +1,7 @@
 function fn() {
   var env = karate.env;
   if (!env) {
-      env = 'dev';
+      env = 'qa';
     }
   var config = { env : env};
   config.baseUrl = "https://bookstore.demoqa.com"

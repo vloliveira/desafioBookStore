@@ -3,6 +3,7 @@ Feature: Criar usuário
   Background:
     Given url baseUrl
 
+  @sucesso
   Scenario:
       * def nome = Java.type('features.support.Utils').gerarNome()
       * print nome
@@ -22,5 +23,18 @@ Feature: Criar usuário
       * def nomeUsuario = usuario.userName
       * def senha = usuario.password
 
-  Scenario:
+  Scenario: Criar usuario já cadastrado
+
+    Given url baseUrl + '/Account/v1/User'
+    * def usuario =
+     """
+      {
+      "userName": "#(usuarioId)",
+      "password": "#(senha)"
+      }
+      """
+    And request usuario
+    When method post
+    Then status 400
+
 
