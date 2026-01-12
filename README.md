@@ -130,16 +130,7 @@ mvn clean test
 
 ```
 
----
 
-### **Executar testes específicos:**
-
-```bash
-<div align="center">
-  <video src="LINK_DO_SEU_VIDEO_AQUI" width="400" />
-</div>
-
-```
 
 ---
 
