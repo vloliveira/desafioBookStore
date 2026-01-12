@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-01-12 02:15:35 AM</div>
+    <div>2026-01-12 12:54:19 PM</div>
   </div>
 </div>
 
@@ -84,7 +84,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1610</span>
+              <span>ms:</span>&nbsp;<span>1030</span>
             </div>
           </div>
           <div class="step-row">
@@ -107,7 +107,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -116,7 +116,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.4">02:15:25.965 karate.env system property was: qa 
+  <div class="preformatted" data-parent="0.4">12:54:17.003 karate.env system property was: qa 
 </div>   
 
   
@@ -136,7 +136,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>call read(&#39;classpath:features/books/buscarLivros/buscar-livros.feature&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">1040</div>
+    <div class="time-cell passed">529</div>
   </div>
 
    
@@ -155,7 +155,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <div class="step-indent"></div>
         <div class="step-cell passed">features.books.buscarLivros.buscar-livros</div>
       </div>
-      <div class="time-cell passed">1022</div>
+      <div class="time-cell passed">520</div>
     </div>
     <div>
       <div><div>
@@ -171,7 +171,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -227,7 +227,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">1015</div>
+    <div class="time-cell passed">517</div>
   </div>
 
    
@@ -236,7 +236,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.6.0.call.0.8">02:15:26.268 request:
+  <div class="preformatted" data-parent="0.6.0.call.0.8">12:54:17.013 request:
 1 &gt; GET https://bookstore.demoqa.com/BookStore/v1/Books
 1 &gt; Host: bookstore.demoqa.com
 1 &gt; Connection: Keep-Alive
@@ -244,10 +244,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-02:15:27.025 response time in milliseconds: 753
+12:54:17.527 response time in milliseconds: 513
 1 &lt; 200
 1 &lt; Server: nginx/1.17.10 (Ubuntu)
-1 &lt; Date: Mon, 12 Jan 2026 05:15:26 GMT
+1 &lt; Date: Mon, 12 Jan 2026 15:54:17 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 4514
 1 &lt; Connection: keep-alive
@@ -274,7 +274,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -295,14 +295,42 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row" data-parent="0.6.0.call">
-    <div class="step-container" id="0.6.0.call.0.11">
-      <div class="step-ref bg-step">11</div>
+    <div class="step-container" id="0.6.0.call.0.10">
+      <div class="step-ref bg-step">10</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response == read(&#39;classpath:features/books/buscarLivros/buscar-livros.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.6.0.call">
+    <div class="step-container" id="0.6.0.call.0.12">
+      <div class="step-ref bg-step">12</div>
       <div class="step-indent"></div>
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def livros = response.books</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -363,7 +391,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>param ISBN = livros[0].isbn</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -391,7 +419,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">556</div>
+    <div class="time-cell passed">499</div>
   </div>
 
    
@@ -400,7 +428,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.12">02:15:27.039 request:
+  <div class="preformatted" data-parent="0.12">12:54:17.535 request:
 1 &gt; GET https://bookstore.demoqa.com/BookStore/v1/Book?ISBN=9781449325862
 1 &gt; Host: bookstore.demoqa.com
 1 &gt; Connection: Keep-Alive
@@ -408,10 +436,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-02:15:27.593 response time in milliseconds: 554
+12:54:18.032 response time in milliseconds: 496
 1 &lt; 200
 1 &lt; Server: nginx/1.17.10 (Ubuntu)
-1 &lt; Date: Mon, 12 Jan 2026 05:15:27 GMT
+1 &lt; Date: Mon, 12 Jan 2026 15:54:18 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 549
 1 &lt; Connection: keep-alive
@@ -466,7 +494,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.isbn == livros[0].isbn</span>
       </div>
     </div>
-    <div class="time-cell passed">9</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -495,7 +523,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1040</span>
+              <span>ms:</span>&nbsp;<span>1025</span>
             </div>
           </div>
           <div class="step-row">
@@ -527,7 +555,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.4">02:15:27.609 karate.env system property was: qa 
+  <div class="preformatted" data-parent="0.4">12:54:18.039 karate.env system property was: qa 
 </div>   
 
   
@@ -547,7 +575,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>call read(&#39;classpath:features/books/buscarLivros/buscar-livros.feature&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">527</div>
+    <div class="time-cell passed">525</div>
   </div>
 
    
@@ -566,7 +594,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <div class="step-indent"></div>
         <div class="step-cell passed">features.books.buscarLivros.buscar-livros</div>
       </div>
-      <div class="time-cell passed">521</div>
+      <div class="time-cell passed">520</div>
     </div>
     <div>
       <div><div>
@@ -638,7 +666,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">520</div>
+    <div class="time-cell passed">519</div>
   </div>
 
    
@@ -647,7 +675,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.6.0.call.0.8">02:15:27.616 request:
+  <div class="preformatted" data-parent="0.6.0.call.0.8">12:54:18.045 request:
 1 &gt; GET https://bookstore.demoqa.com/BookStore/v1/Books
 1 &gt; Host: bookstore.demoqa.com
 1 &gt; Connection: Keep-Alive
@@ -655,10 +683,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-02:15:28.135 response time in milliseconds: 517
+12:54:18.562 response time in milliseconds: 515
 1 &lt; 200
 1 &lt; Server: nginx/1.17.10 (Ubuntu)
-1 &lt; Date: Mon, 12 Jan 2026 05:15:27 GMT
+1 &lt; Date: Mon, 12 Jan 2026 15:54:18 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 4514
 1 &lt; Connection: keep-alive
@@ -706,8 +734,36 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row" data-parent="0.6.0.call">
-    <div class="step-container" id="0.6.0.call.0.11">
-      <div class="step-ref bg-step">11</div>
+    <div class="step-container" id="0.6.0.call.0.10">
+      <div class="step-ref bg-step">10</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response == read(&#39;classpath:features/books/buscarLivros/buscar-livros.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.6.0.call">
+    <div class="step-container" id="0.6.0.call.0.12">
+      <div class="step-ref bg-step">12</div>
       <div class="step-indent"></div>
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def livros = response.books</span>
@@ -771,7 +827,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">19</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param ISBN = &quot;1234567890123&quot;</span>
+        <span>And</span>&nbsp;<span>param ISBN = &quot;0000000000000&quot;</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -802,7 +858,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">512</div>
+    <div class="time-cell passed">498</div>
   </div>
 
    
@@ -811,18 +867,18 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.20">02:15:28.138 request:
-1 &gt; GET https://bookstore.demoqa.com/BookStore/v1/Book?ISBN=1234567890123
+  <div class="preformatted" data-parent="0.20">12:54:18.566 request:
+1 &gt; GET https://bookstore.demoqa.com/BookStore/v1/Book?ISBN=0000000000000
 1 &gt; Host: bookstore.demoqa.com
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.6)
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-02:15:28.648 response time in milliseconds: 510
+12:54:19.063 response time in milliseconds: 496
 1 &lt; 400
 1 &lt; Server: nginx/1.17.10 (Ubuntu)
-1 &lt; Date: Mon, 12 Jan 2026 05:15:28 GMT
+1 &lt; Date: Mon, 12 Jan 2026 15:54:19 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 79
 1 &lt; Connection: keep-alive

@@ -16,7 +16,7 @@ Feature: Buscar livro com ISBN
       @negative
     Scenario: Buscar livro com isbn inexistente
       And path '/BookStore/v1/Book'
-      And param ISBN = "1234567890123"
+      And param ISBN = "0000000000000"
       When method get
       Then status 400
       And match response.message == "ISBN supplied is not available in Books Collection!"

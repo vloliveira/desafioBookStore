@@ -27,6 +27,7 @@ Feature: Adicionar livro ao usuario
       And request body
       When method post
       Then status 201
+      And match response == read('classpath:features/books/adicionarLivro/adicionar-livro-sucesso.json')
 
     @negative
     Scenario: Adicionar livro com isbn inválido
@@ -41,7 +42,7 @@ Feature: Adicionar livro ao usuario
           "userId": "#(usuarioId)",
           "collectionOfIsbns": [
             {
-              "isbn": "1234567890123"
+              "isbn": "0000000000000"
             }
           ]
         }
@@ -50,6 +51,7 @@ Feature: Adicionar livro ao usuario
       And request body
       When method post
       Then status 400
+      And match response == read('classpath:features/books/adicionarLivro/adicionar-livro-invalido.json')
 
 
 

@@ -24,6 +24,7 @@ Feature: Atualizar livro do usuário
       And request body
       When method put
       Then status 200
+      And match response == read('classpath:features/books/alterarLivro/alterar-livro-sucesso.json')
 
     Scenario: Atualizar ISBN incorreto
 
@@ -37,11 +38,12 @@ Feature: Atualizar livro do usuário
         """
           {
             "userId": "#(usuarioId)",
-            "isbn": "1234567890123"
+            "isbn": "0000000000000"
           }
         """
       And path '/BookStore/v1/Books/', livro
       And request body
       When method put
       Then status 400
+      And match response == read('classpath:features/books/alterarLivro/alterar-livro-invalido.json')
 

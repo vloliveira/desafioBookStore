@@ -48,7 +48,7 @@ class TestRunner {
         ).relativeTo(TestRunner.class);
     }
     @Karate.Test
-    Karate deletarCriarUsuario() {
+    Karate deletarUsuario() {
         return Karate.run("classpath:features/users/deletarUsuario/deletar-usuario.feature"
         ).relativeTo(TestRunner.class);
     }
